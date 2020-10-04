@@ -6,7 +6,7 @@ Durant ce TP, nous allons mettre en oeuvre le platform-as-a-service ainsi que le
 Un bref rappel de l'architecture de l'application
 ![Architecture](https://spring-petclinic.github.io/images/petclinic-microservices-architecture.png "Architecture")
 
-Le TP est découpé en deux parties : le fichier ```README.md``` suivant, ainsi qu'un fichier ```ÀNSWER.md``` qui contient 10 questions à répondre.
+Le TP est découpé en deux parties : le fichier ```README.md``` suivant, ainsi qu'un fichier ```ÀNSWER.md``` qui contient 5 questions à répondre.
 
 Le principe du TP est de répondre aux questions dans le fichier ```ANSWER.md``` et de le pousser sur votre repository. Le reste est expliqué au fur et à mesure de ce TP.
 
@@ -16,7 +16,7 @@ Suivre le lien présent au tableau pour forker ce repository dans votre reposito
 
 ### 1.1 : Cloner le repository
 Clonez le repo nouvellement copié sur votre ordinateur 
-> A partir de maintenant, **vous ne travaillerez plus que dans votre copie**. Vous n'avez plus à revenir sur [le projet parent](https://github.com/cours-hei/tp1).
+> A partir de maintenant, **vous ne travaillerez plus que dans votre copie**. Vous n'avez plus à revenir sur [le projet parent](https://github.com/cours-hei/tp2).
 
 ## 2 : Elastic Beanstalk
 Dans un premier temps, nous allons déployer le projet PetClinic sur Elastic Beanstalk
