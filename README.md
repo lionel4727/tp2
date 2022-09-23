@@ -25,11 +25,14 @@ As the virtual machines where you compiled the Petclinic project no longer exist
 > I remind you the URL of the `Petclinic` repository: `https://github.com/spring-projects/spring-petclinic/`, and the command to generate the `./mvnw package`.
 
 ### 2.1: Deploying Elastic Beanstalk
-As seen during the course, to deploy an Elastic Beanstalk, go to the AWS portal and click on the Elastic Beanstalk menu (if you can't find the menu, it's also possible to use AWS search).
+As seen during the course, to deploy an Elastic Beanstalk, go to the AWS portal and click on the Elastic Beanstalk menu (if you can't find the menu, it's also possible to use AWS search). Don't forget to first select the region where you want to deploy your application, ie. `Ireland`.
 In the Elastic Beanstalk menu, create an application. This application must be of type :
+
+```
 - Platform: Java
-- Platform branch : Java 8 running on 64bit Amazon Linux
-- Platform version: 2.11.11 (Recommended)
+- Platform branch : Corretto 11 running on 64bit Amazon Linux
+- Platform version: 3.3.2 (Recommended)
+```
 
 > Remember to name your application `petclinic-<firstname>-<name>` so that the application can be created.
 
@@ -50,7 +53,7 @@ Now that the PetClinic application is running, it is necessary to add a database
 
 ```
 - Engine: mysql
-- Engine version: 8.0.23
+- Engine version: 8.0.30
 - Instance class: db.t2.micro
 - Storage : 5
 - Username : petclinic
@@ -61,7 +64,7 @@ Now that the PetClinic application is running, it is necessary to add a database
 
 This command will create a MySQL RDS managed database. Once the database is created, AWS will return the endpoint of the RDS database.
 
-Two new variables need to be created in Elastic Beanstalk in order to hot reconfigure the website.
+Two new variables need to be created in Elastic Beanstalk in order to hot-reconfigure the website.
 
 The first variable is the `SPRING_PROFILES_ACTIVE` variable which indicates the profile to use when the application starts. If you remember from TP1, you will know the value to put in this variable.
 
@@ -97,7 +100,7 @@ Follow the installation and build documentation for the application. At the end 
 ### 3.2: Creating the S3 bucket
 The site will now need to be hosted on a public S3 bucket.
 
-Go to the S3 menu and click on the **Create bucket** button. In the new menu, choose a unique DNS name, then in the permissions, uncheck the **Block *all* public access** box, then check the *I acknowledge that the current settings may result in this bucket and the objects within becoming public* box
+Go to the S3 menu and click on the **Create bucket** button. In the new menu, choose a unique DNS name (like `firstname-lastname`), then in the permissions, uncheck the **Block *all* public access** box, then check the *I acknowledge that the current settings may result in this bucket and the objects within becoming public* box
 
 Once the bucket has been created, upload **all** of the contents of the *dist* folder (including subfolders) into the S3 bucket. Then select all the files and sub-folders in the bucket, click on the **Actions** button and select **Make public**.
 
@@ -141,8 +144,6 @@ During step **3. Packaging the application**, it is also necessary to remove the
     </executions>
 </plugin>
 ```
-
-You also need to change the version of the `maven-shade-plugin`. Change the line `<version>2.3</version>` to version `3.2.4`.
 
 Once you have done this, you need to recompile the application and deploy the `.jar` in the `target` folder to a new AWS S3 Bucket. This new bucket will be used to deploy the application on AWS Lambda.
 
