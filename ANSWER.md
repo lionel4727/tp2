@@ -1,19 +1,18 @@
 # Answers
-
-Nom : 
-Prénom : 
+Last name : 
+First name : 
 
 # 1.
-Citez deux avantages du PaaS sur le IaaS ?
+Name two advantages of PaaS over IaaS?
 
 # 2.
-Quelle est la différence entre le PaaS et le Serverless ?
+What is the difference between PaaS and Serverless?
 
 # 3.
-Que veut dire Serverless ?
+What does Serverless mean?
 
 # 4.
-Citez les trois propriétés désirable du Serverless ?
+What are the three desirable properties of Serverless?
 
 # 5.
-Comment s'appelle la plus petite unité de compute déployable en Serverless ?
+What is the name of the smallest deployable compute unit in Serverless?
